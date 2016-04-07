@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+#header {
+	height: 40px;
+	background: crimson;
+	color: white;
+	padding: 5px;
+	position: relative;
+}
+
+#header * {
+	margin: 0;
+	text-align: center;
+}
+
+#content {
+	padding: 10px 15px;
+}
+
+#show {
+	position: absolute;
+	top: 15px;
+	left: 10px;
+}
+
+#controls {
+	border-collapse: collapse;
+	width: 100%;
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{baseUrl}}/css/index.css" type="text/css" />
+<!--    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+--!>
+<!--<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js">
+</script>-->
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<!--    <script type="text/javascript" src="jquery-1.12.2.js"></script> 
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>-->
+
+    <style>
+    .fg-button {
+    outline: 0;
+    clear: left;
+    margin:0 4px 0 0;
+    padding: .1em .5em;
+    text-decoration:none !important;
+    cursor:pointer;
+    position: relative;
+    text-align: center;
+    zoom: 1;
+    }
+    .fg-button .ui-icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    left: 50%;
+    margin-left: -8px;
+    }
+    a.fg-button { float:left;  }
+    .terminal {
+    position: relative;
+    top: 100;
+    left: 0;
+    font-family: monospace;
+    white-space: pre;
+    width: 100%; height: 55em;
+    border: none;
+    }
+    .terminals {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    width: 100%; height: 55em;
+    border: none;
+    }
+    </style>
+<script>
+var iflag = null ;
+</script>    
+<script>
+$(document).ready(function(){
+  $("#display").click(function(){
+    $("#console_iframe_2").hide();
+  });
+  $("#showplay").click(function(){
+    $("#console_iframe_2").show();
+  });
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+  $("#logfile").change(function(){
+    var options = "mv";
+    var value = $(this).val();//.substring(1)
+    if($(document.getElementById(value)).length > 0){
+    $(document.getElementById(iflag)).attr("style", "display:none");
+    $(document.getElementById(value)).attr("style", "display:block");
+    iflag = value;
+    alert('exists'+value+iflag+'');
+    }
+    else{
+    $('<iframe id='+value+' '+'style="display:none" class="terminal"'+'></iframe>').appendTo('#console_iframe');
+		if (iflag == null) {
+    	alert('no exists+'+'iflag:'+iflag+'value'+value+'');
+    	iflag = value;
+    	}
+    	else {
+    	$(document.getElementById(iflag)).attr("style", "display:none");
+    	iflag = value;
+    	alert('no exists+'+'iflag:'+iflag+'value:'+value+'');
+    	}
+    	$(document.getElementById(value)).attr("style", "display:block");
+    	$("#logviewer_form").attr("target",value).submit();
+    };
+    //$("#mv").attr("style", "display:none");
+    //$("#mvs").attr("style", "display:block");
+    //$("#logviewer_form").attr("target", options).submit();
+    //$("#logviewer_form").attr("target", options).submit();
+    });
+  $("#iframeshow").click(function(){
+    $("#mvs").attr("style", "display:none");
+    $("#mv").attr("style", "display:block");
+    });
+    
+});
+</script>
+
+  </head>
+  <body>
+ <!-- <script type="text/javascript">
+    $$(function(){
+        //$$('#result').hide();
+        $$('#kill_logviewer').click(function() {
+            $$.ajax({
+                url: "/kill_proc",
+                cache: false,
+                success: function(html){
+                    window.frames[0].stop();
+                    $$("#result").html(html);
+                    $$("#result").show('slow');
+                }
+            });
+            return false;
+        });
+    });
+    
+    </script>-->
+    <table id='title——node'>
+    <a href = "http://10.128.136.154:9013/"><input type="button" value="Node 1" /></a>
+    <a href = "http://10.128.136.154:9010/"><input type="button" value="Node 2" /></a>
+    <a href = "http://10.128.136.154:9011/"><input type="button" value="Node 3" /></a>
+    </table>
+
+  <table id='controls'>
+    <form id="logviewer_form" target="_blank" method="post" action="/tail">
+         <select id="logfile" name="logfile">
+       {% for f in files %}
+           <option>{{f}}
+           </option>
+           
+       {% endfor %}
+         </select>
+    <!--    <button id="tail" class="fg-button ui-state-default ui-corner-all" title="Click to view rolling real time logs" type="submit">
+            Check Log
+         </button>-->
+    </form>
+    
+         <button id="display"type="button" onclick="mydisplay()"> 
+            display
+         </button>
+         <button id="showplay"type="button" onclick="mydisplayshow()">
+            show
+         </button>
+         <button id="iframeshow"type="button">
+            iframeshow
+         </button>
+    <!--<form id="displayshow" onclick="displayDate()">
+         <button id="sessiontest" class="fg-button ui-state-default ui-corner-all" title="Click to stop to the tail (sends SIGINT)">
+            show
+         </button>
+    </form>-->
+    <form id="kill_form" method="post" action="/kill_proc">
+         <button id="kill_logviewer" class="fg-button ui-state-default ui-corner-all" title="Click to stop to the tail (sends SIGINT)" type="submit">
+            Control-C
+         </button>
+    </form>
+    <form id="download_form" method="post" action="/downloadlist">
+         <button id="download_log" class="fg-button ui-state-default ui-corner-all" title="Click to download the log selected" type="submit">
+            Download File
+         </button>
+    </form>
+  </table>
+      
+  <div id="console_iframe" class="ui-state-highlight"><!-- style="display: ;-->
+     <span class="ui-icon ui-icon-check ui-icon-left" style="margin-right: .3em;">
+     </span>
+
+  </div>
+  <!--  
+ <iframe id="mv" class="terminal" style ="display:none" ></iframe>
+  <div id="console_iframes" class="ui-state-highlight"><!-- style="display: ;-->
+     <span class="ui-icon ui-icon-check ui-icon-left" style="margin-right: .3em;">
+     </span>
+     <iframe id="mvs" class="terminal" style="display:none"></iframe>
+  </div>
+
+  <div id="result_2" class="ui-state-highlight"><!-- style="display: ;-->
+     <span class="ui-icon ui-icon-check ui-icon-left" style="margin-right: .3em;">
+     </span>
+       <iframe id="mvss" class="terminal"></iframe> 
+  </div>
+  <div id="result_2" class="ui-state-highlight"><!-- style="display: ;-->
+     <span class="ui-icon ui-icon-check ui-icon-left" style="margin-right: .3em;">
+     </span>
+       <iframe name="console_iframe_4" class="terminal"/> 
+  </div>-->
+  </body>
+</html>

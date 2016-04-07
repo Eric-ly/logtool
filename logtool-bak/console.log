@@ -1,0 +1,44 @@
+[06/Apr/2016:09:18:45] ENGINE Bus STARTING
+[06/Apr/2016:09:18:45] ENGINE Started monitor thread 'Autoreloader'.
+[06/Apr/2016:09:18:45] ENGINE Started monitor thread '_TimeoutMonitor'.
+[06/Apr/2016:09:18:45] ENGINE Serving on http://0.0.0.0:9013
+[06/Apr/2016:09:18:45] ENGINE Bus STARTED
+127.0.0.1 - - [06/Apr/2016:09:18:50] "GET / HTTP/1.1" 200 7678 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+127.0.0.1 - - [06/Apr/2016:09:18:50] "GET /logtool copy/css/index.css HTTP/1.1" 404 1306 "http://localhost:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+127.0.0.1 - - [06/Apr/2016:09:19:12] "GET / HTTP/1.1" 200 7678 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+127.0.0.1 - - [06/Apr/2016:09:19:12] "GET /logtool copy/css/index.css HTTP/1.1" 404 1306 "http://localhost:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+[06/Apr/2016:09:19:18] ENGINE Started monitor thread 'Session cleanup'.
+127.0.0.1 - - [06/Apr/2016:09:19:18] "POST /tail HTTP/1.1" 200 - "http://localhost:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+127.0.0.1 - - [06/Apr/2016:09:19:21] "POST /tail HTTP/1.1" 200 - "http://localhost:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+127.0.0.1 - - [06/Apr/2016:09:20:25] "GET / HTTP/1.1" 200 7678 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+127.0.0.1 - - [06/Apr/2016:09:20:25] "GET /logtool copy/css/index.css HTTP/1.1" 404 1306 "http://localhost:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+127.0.0.1 - - [06/Apr/2016:09:20:28] "POST /tail HTTP/1.1" 200 - "http://localhost:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+127.0.0.1 - - [06/Apr/2016:09:20:32] "POST /tail HTTP/1.1" 200 - "http://localhost:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+127.0.0.1 - - [06/Apr/2016:09:20:51] "POST /tail HTTP/1.1" 200 - "http://localhost:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+127.0.0.1 - - [06/Apr/2016:09:20:55] "POST /tail HTTP/1.1" 200 - "http://localhost:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+127.0.0.1 - - [06/Apr/2016:09:21:36] "POST /tail HTTP/1.1" 200 - "http://localhost:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+10.128.136.154 - - [06/Apr/2016:09:22:54] "GET / HTTP/1.1" 200 7678 "http://localhost:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+10.128.136.154 - - [06/Apr/2016:09:22:54] "GET /logtool copy/css/index.css HTTP/1.1" 404 1306 "http://10.128.136.154:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+10.128.136.154 - - [06/Apr/2016:09:22:55] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 1318 "" "Safari/11601.2.7.2 CFNetwork/760.1.2 Darwin/15.0.0 (x86_64)"
+10.128.136.154 - - [06/Apr/2016:09:22:55] "GET /apple-touch-icon.png HTTP/1.1" 404 1294 "" "Safari/11601.2.7.2 CFNetwork/760.1.2 Darwin/15.0.0 (x86_64)"
+10.128.136.154 - - [06/Apr/2016:10:26:51] "GET / HTTP/1.1" 200 7678 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+10.128.136.154 - - [06/Apr/2016:10:26:51] "GET /logtool copy/css/index.css HTTP/1.1" 404 1306 "http://10.128.136.154:9013/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.7 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.7"
+[07/Apr/2016:15:15:54] ENGINE Restarting because /Users/i325009/Documents/python/cherrypy-project/logtool copy/logtool.py changed.
+[07/Apr/2016:15:15:54] ENGINE Stopped thread 'Autoreloader'.
+[07/Apr/2016:15:15:54] ENGINE Bus STOPPING
+[07/Apr/2016:15:15:54] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 9013)) shut down
+[07/Apr/2016:15:15:54] ENGINE Stopped thread 'Session cleanup'.
+[07/Apr/2016:15:15:54] ENGINE Stopped thread '_TimeoutMonitor'.
+[07/Apr/2016:15:15:54] ENGINE Bus STOPPED
+[07/Apr/2016:15:15:54] ENGINE Bus EXITING
+[07/Apr/2016:15:15:54] ENGINE Bus EXITED
+[07/Apr/2016:15:15:54] ENGINE Waiting for child threads to terminate...
+[07/Apr/2016:15:15:54] ENGINE Re-spawning ./logtool.py
+Traceback (most recent call last):
+  File "./logtool.py", line 171, in <module>
+    cherrypy.engine.block()
+  File "/Library/Python/2.7/site-packages/CherryPy-5.0.1-py2.7.egg/cherrypy/process/wspbus.py", line 346, in block
+    self._do_execv()
+  File "/Library/Python/2.7/site-packages/CherryPy-5.0.1-py2.7.egg/cherrypy/process/wspbus.py", line 390, in _do_execv
+    os.chdir(_startup_cwd)
+OSError: [Errno 2] No such file or directory: '/Users/i325009/Documents/python/cherrypy-project/logtool copy'
